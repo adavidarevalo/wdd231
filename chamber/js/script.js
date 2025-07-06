@@ -7,94 +7,23 @@ const navMenu = document.getElementById('nav-menu');
 const currentYear = document.getElementById('current-year');
 const lastModified = document.getElementById('last-modified');
 
-// Member data
-const members = [
-    {
-      "id": 1,
-      "name": "Tech Solutions Inc.",
-      "address": "123 Tech Street, Tech City, TC 12345",
-      "phone": "(555) 123-4567",
-      "website": "https://techsolutions.com",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRaHRyJZbS-1oIIOwxfO5sBWWRh-iweFC_PWw&s",
-      "membershipLevel": 3,
-      "category": "Technology",
-      "email": "info@techsolutions.com",
-      "description": "Providing innovative technology solutions for businesses of all sizes."
-    },
-    {
-      "id": 2,
-      "name": "Green Thumb Landscaping",
-      "address": "456 Garden Ave, Green Valley, GV 23456",
-      "phone": "(555) 234-5678",
-      "website": "https://greenthumb.com",
-      "image": "https://irp.cdn-website.com/89ab8989/dms3rep/multi/green-thumb-logo.svg",
-      "membershipLevel": 2,
-      "category": "Landscaping",
-      "email": "contact@greenthumb.com",
-      "description": "Professional landscaping services for residential and commercial properties."
-    },
-    {
-      "id": 3,
-      "name": "Summit Financial Advisors",
-      "address": "789 Finance Blvd, Money City, MC 34567",
-      "phone": "(555) 345-6789",
-      "website": "https://summitfinancial.com",
-      "image": "https://summitfinancial.com/wp-content/uploads/2021/07/Summit-logo_square.png",
-      "membershipLevel": 3,
-      "category": "Financial Services",
-      "email": "advisors@summitfinancial.com",
-      "description": "Helping you plan for a secure financial future."
-    },
-    {
-      "id": 4,
-      "name": "Paws & Claws Pet Care",
-      "address": "101 Pet Lane, Animal Town, AT 45678",
-      "phone": "(555) 456-7890",
-      "website": "https://pawsandclaws.com",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTfmuEW13iA6vdwHf-SKfrsFk6F1ZZvpDXT_A&s",
-      "membershipLevel": 1,
-      "category": "Pet Services",
-      "email": "info@pawsandclaws.com",
-      "description": "Comprehensive pet care services including grooming, boarding, and training."
-    },
-    {
-      "id": 5,
-      "name": "Urban Eats Restaurant",
-      "address": "202 Food Street, Culinary City, CC 56789",
-      "phone": "(555) 567-8901",
-      "website": "https://urbaneats.com",
-      "image": "https://houstonfoodfinder.com/wp-content/uploads/2018/01/urban_eats_exterior_courtesy_urban_eats.jpg",
-      "membershipLevel": 2,
-      "category": "Restaurant",
-      "email": "dine@urbaneats.com",
-      "description": "A modern restaurant serving locally-sourced, seasonal cuisine."
-    },
-    {
-      "id": 6,
-      "name": "Elite Fitness Center",
-      "address": "303 Health Way, Fitness City, FC 67890",
-      "phone": "(555) 678-9012",
-      "website": "https://elitefitness.com",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQc-R796JEmVTqS4AAtCIywYhXzxdeWFmdorg&s",
-      "membershipLevel": 3,
-      "category": "Fitness",
-      "email": "join@elitefitness.com",
-      "description": "State-of-the-art fitness facility with personalized training programs."
-    },
-    {
-      "id": 7,
-      "name": "Bright Minds Tutoring",
-      "address": "404 Education Ave, Learning City, LC 78901",
-      "phone": "(555) 789-0123",
-      "website": "https://brightminds.com",
-      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQVqR-3abqSWlWXU2pdFeOjUHIKZunPAtOQZQ&s",
-      "membershipLevel": 1,
-      "category": "Education",
-      "email": "learn@brightminds.com",
-      "description": "Personalized tutoring services for students of all ages and subjects."
+// Members data will be loaded from JSON file
+let members = [];
+
+// Load members from JSON file
+async function loadMembers() {
+    try {
+        const response = await fetch('data/members.json');
+        members = await response.json();
+        // After loading members, initialize the view
+        const preferredView = localStorage.getItem('preferredView') || 'grid';
+        displayMembers(preferredView);
+    } catch (error) {
+        console.error('Error loading members:', error);
+        // Fallback to an empty array if loading fails
+        members = [];
     }
-  ]
-  
+}
 
 // Get membership level text
 function getMembershipLevel(level) {
@@ -183,9 +112,8 @@ function setLastModified() {
 
 // Event Listeners
 document.addEventListener('DOMContentLoaded', () => {
-    // Set preferred view from localStorage or default to grid
-    const preferredView = localStorage.getItem('preferredView') || 'grid';
-    toggleView(preferredView);
+    // Load members data
+    loadMembers();
     
     // Set current year and last modified date
     setCurrentYear();
