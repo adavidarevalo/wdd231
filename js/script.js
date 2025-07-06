@@ -20,7 +20,7 @@ const navMenu = document.querySelector('.nav-menu');
 // Initialize the page
 document.addEventListener('DOMContentLoaded', () => {
     // Display current year in footer
-    document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} • Student Name • Utah, USA`;
+    document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} • David Arevalo • Utah, USA`;
     
     // Display last modified date
     document.getElementById('lastModified').textContent = `Last Modification: ${document.lastModified}`;
