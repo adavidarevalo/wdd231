@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Chamber of Commerce - Discover Page - Learn about our local community and attractions"
+    />
+    <meta name="author" content="David Arevalo" />
+    <meta
+      name="keywords"
+      content="chamber of commerce, discover, local attractions, community, Quito, Ecuador"
+    />
+    <meta name="robots" content="index, follow" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:url"
+      content="https://yourwebsite.com/chamber/discover.html"
+    />
+    <meta property="og:title" content="Chamber of Commerce - Discover" />
+    <meta
+      property="og:description"
+      content="Discover our local community and attractions."
+    />
+    <meta
+      property="og:image"
+      content="https://yourwebsite.com/chamber/images/og-image.jpg"
+    />
+
+    <!-- Favicon -->
+    <link rel="icon" href="images/favicon.ico" />
+
+    <title>Chamber of Commerce - Discover</title>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/discover.css" />
+
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <div class="header-content">
+        <div class="logo">
+          <h1>Chamber of Commerce</h1>
+        </div>
+        <nav>
+          <button id="hamburger">☰</button>
+          <ul id="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="discover.html" class="active">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="discover-hero">
+        <h1>Discover Our Community</h1>
+        <p>
+          Explore the rich culture, history, and opportunities in our vibrant
+          city
+        </p>
+      </section>
+
+      <section class="demographics">
+        <h2>Demographics</h2>
+        <div class="demographics-grid">
+          <div class="demo-card">
+            <h3>Population</h3>
+            <p>2.7 million</p>
+          </div>
+          <div class="demo-card">
+            <h3>Median Age</h3>
+            <p>32 years</p>
+          </div>
+          <div class="demo-card">
+            <h3>Education</h3>
+            <p>85% high school graduates</p>
+          </div>
+          <div class="demo-card">
+            <h3>Employment</h3>
+            <p>92% employment rate</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="attractions">
+        <h2>Local Attractions</h2>
+        <div class="attractions-grid">
+          <div class="attraction-card">
+            <h3>Historic Center</h3>
+            <p>UNESCO World Heritage site with colonial architecture</p>
+          </div>
+          <div class="attraction-card">
+            <h3>TelefériQo</h3>
+            <p>Cable car offering panoramic views of the city</p>
+          </div>
+          <div class="attraction-card">
+            <h3>Mitad del Mundo</h3>
+            <p>Monument marking the equator line</p>
+          </div>
+          <div class="attraction-card">
+            <h3>La Ronda</h3>
+            <p>Historic street with traditional crafts and food</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="business-info">
+        <h2>Business Environment</h2>
+        <div class="business-grid">
+          <div class="business-card">
+            <h3>Major Industries</h3>
+            <ul>
+              <li>Technology</li>
+              <li>Tourism</li>
+              <li>Manufacturing</li>
+              <li>Financial Services</li>
+            </ul>
+          </div>
+          <div class="business-card">
+            <h3>Economic Growth</h3>
+            <p>Annual GDP growth of 3.2%</p>
+          </div>
+          <div class="business-card">
+            <h3>Startup Ecosystem</h3>
+            <p>Over 500 active startups</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="visit-counter">
+        <h2>Visit Counter</h2>
+        <p>You have visited this page <span id="visit-count">0</span> times</p>
+        <p>Last visit: <span id="last-visit">Never</span></p>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Chamber of Commerce</h3>
+          <p>Av. Amazonas 123<br />Quito, Pichincha 170135</p>
+        </div>
+        <div class="contact-info">
+          <p>info@chamberofcommerce.com</p>
+          <p>+593 (2) 600-1234</p>
+          <p>📍 Location Map</p>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Chamber of Commerce | David
+            Arevalo | WDD 231 Project
+          </p>
+          <p>Last Modified: <span id="last-modified"></span></p>
+        </div>
+      </div>
+    </footer>
+
+    <script type="module" src="js/script.js"></script>
+    <script src="js/discover.js"></script>
+  </body>
+</html>

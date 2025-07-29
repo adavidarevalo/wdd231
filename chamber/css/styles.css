@@ -1,12 +1,12 @@
 /* Base Styles */
 :root {
-    --primary-color: #2c3e50;
-    --secondary-color: #3498db;
-    --accent-color: #e74c3c;
+    --primary-color: #1a252f;
+    --secondary-color: #2980b9;
+    --accent-color: #c0392b;
     --light-color: #ecf0f1;
-    --dark-color: #2c3e50;
-    --text-color: #333;
-    --text-light: #7f8c8d;
+    --dark-color: #1a252f;
+    --text-color: #2c3e50;
+    --text-light: #5d6d7e;
     --max-width: 1200px;
 }
 
@@ -204,9 +204,9 @@ main {
     letter-spacing: 0.5px;
 }
 
-.level-1 { background-color: #e0e0e0; color: #424242; }
-.level-2 { background-color: #c0ca33; color: #1b5e20; }
-.level-3 { background-color: #ffd700; color: #5d4037; }
+.level-1 { background-color: #e0e0e0; color: #2c3e50; }
+.level-2 { background-color: #95a5a6; color: #ffffff; }
+.level-3 { background-color: #f39c12; color: #ffffff; }
 
 /* List View */
 #members-container.list-view {
@@ -424,6 +424,12 @@ footer {
     opacity: 0;
     transform: translateY(30px);
     animation: cardFadeIn 0.7s forwards;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.membership-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
 }
 
 .membership-card:nth-child(1) { animation-delay: 0.1s; }

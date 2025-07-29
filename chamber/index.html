@@ -1,107 +1,136 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Chamber of Commerce - Home Page">
-    <meta name="author" content="David Arevalo">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Chamber of Commerce - Home Page" />
+    <meta name="author" content="David Arevalo" />
+    <meta
+      name="keywords"
+      content="chamber of commerce, business, networking, community, Quito, Ecuador"
+    />
+    <meta name="robots" content="index, follow" />
+
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://yourwebsite.com/chamber/">
-    <meta property="og:title" content="Chamber of Commerce - Home">
-    <meta property="og:description" content="Welcome to the official Chamber of Commerce home page.">
-    <meta property="og:image" content="https://yourwebsite.com/chamber/images/og-image.jpg">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://yourwebsite.com/chamber/" />
+    <meta property="og:title" content="Chamber of Commerce - Home" />
+    <meta
+      property="og:description"
+      content="Welcome to the official Chamber of Commerce home page."
+    />
+    <meta
+      property="og:image"
+      content="https://yourwebsite.com/chamber/images/og-image.jpg"
+    />
 
     <!-- Favicon -->
-    <link rel="icon" href="images/favicon.ico">
+    <link rel="icon" href="images/favicon.ico" />
 
     <title>Chamber of Commerce - Home</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
-    <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/home.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/home.css" />
 
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
-</head>
-<body>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
     <header>
-        <div class="header-content">
-            <div class="logo">
-                <h1>Chamber of Commerce</h1>
-            </div>
-            <nav>
-                <button id="hamburger">☰</button>
-                <ul id="nav-menu">
-                    <li><a href="index.html" class="active">Home</a></li>
-                    <li><a href="discover.html">Discover</a></li>
-                    <li><a href="directory.html">Directory</a></li>
-                    <li><a href="join.html">Join</a></li>
-                </ul>
-            </nav>
+      <div class="header-content">
+        <div class="logo">
+          <h1>Chamber of Commerce</h1>
         </div>
+        <nav>
+          <button id="hamburger">☰</button>
+          <ul id="nav-menu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="discover.html">Discover</a></li>
+            <li><a href="directory.html">Directory</a></li>
+            <li><a href="join.html">Join</a></li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <picture>
-                <source srcset="images/hero-small.jpg" media="(max-width: 600px)">
-                <img src="images/hero-large.jpg" alt="City skyline" loading="lazy">
-            </picture>
-            <div class="hero-overlay">
-                <h2>Building a stronger business community</h2>
-                <a href="join.html" class="cta-btn">Join the Chamber</a>
-            </div>
-        </section>
+      <!-- Hero Section -->
+      <section class="hero">
+        <picture>
+          <source srcset="images/hero-small.jpg" media="(max-width: 600px)" />
+          <img src="images/hero-large.jpg" alt="City skyline" loading="lazy" />
+        </picture>
+        <div class="hero-overlay">
+          <h2>Building a stronger business community</h2>
+          <a href="join.html" class="cta-btn">Join the Chamber</a>
+        </div>
+      </section>
 
-        <!-- Events Section -->
-        <section class="events">
-            <h2>Próximos Eventos</h2>
-            <ul>
-                <li><strong>Desayuno de Networking Empresarial</strong> – 12 Ago, 7:30 a.m.</li>
-                <li><strong>Jornada de Limpieza Comunitaria</strong> – 20 Ago, 9:00 a.m.</li>
-                <li><strong>Feria Laboral de Otoño</strong> – 5 Sep, 10:00 a.m.</li>
-            </ul>
-        </section>
+      <!-- Events Section -->
+      <section class="events">
+        <h2>Próximos Eventos</h2>
+        <ul>
+          <li>
+            <strong>Desayuno de Networking Empresarial</strong> – 12 Ago, 7:30
+            a.m.
+          </li>
+          <li>
+            <strong>Jornada de Limpieza Comunitaria</strong> – 20 Ago, 9:00 a.m.
+          </li>
+          <li><strong>Feria Laboral de Otoño</strong> – 5 Sep, 10:00 a.m.</li>
+        </ul>
+      </section>
 
-        <!-- Weather Section -->
-        <section class="weather" id="weather">
-            <h2>Clima – Quito, Ecuador</h2>
-            <div class="current-weather">
-                <p><span id="temp"></span>°C – <span id="description"></span> <img id="weather-icon" alt=""></p>
-            </div>
-            <div class="forecast" id="forecast"></div>
-        </section>
+      <!-- Weather Section -->
+      <section class="weather" id="weather">
+        <h2>Clima – Quito, Ecuador</h2>
+        <div class="current-weather">
+          <p>
+            <span id="temp"></span>°C – <span id="description"></span>
+            <img id="weather-icon" alt="" />
+          </p>
+        </div>
+        <div class="forecast" id="forecast"></div>
+      </section>
 
-        <!-- Member Spotlights -->
-        <section class="spotlights">
-            <h2>Member Spotlights</h2>
-            <div id="spotlights-container" class="spotlights-container"></div>
-        </section>
+      <!-- Member Spotlights -->
+      <section class="spotlights">
+        <h2>Member Spotlights</h2>
+        <div id="spotlights-container" class="spotlights-container"></div>
+      </section>
     </main>
 
     <footer>
-        <div class="footer-content">
-            <div class="footer-logo">
-                <h3>Chamber of Commerce</h3>
-                <p>Av. Amazonas 123<br>Quito, Pichincha 170135</p>
-            </div>
-            <div class="contact-info">
-                <p>info@chamberofcommerce.com</p>
-                <p>+593 (2) 600-1234</p>
-                <p>📍 Location Map</p>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> Chamber of Commerce | David Arevalo | WDD 231 Project</p>
-                <p>Last Modified: <span id="last-modified"></span></p>
-            </div>
+      <div class="footer-content">
+        <div class="footer-logo">
+          <h3>Chamber of Commerce</h3>
+          <p>Av. Amazonas 123<br />Quito, Pichincha 170135</p>
         </div>
+        <div class="contact-info">
+          <p>info@chamberofcommerce.com</p>
+          <p>+593 (2) 600-1234</p>
+          <p>📍 Location Map</p>
+        </div>
+        <div class="footer-bottom">
+          <p>
+            &copy; <span id="current-year"></span> Chamber of Commerce | David
+            Arevalo | WDD 231 Project
+          </p>
+          <p>Last Modified: <span id="last-modified"></span></p>
+        </div>
+      </div>
     </footer>
 
     <script type="module" src="js/home.js"></script>
-    <script type="module" src="js/script.js"></script> <!-- shared functionality -->
-</body>
+    <script type="module" src="js/script.js"></script>
+    <!-- shared functionality -->
+  </body>
 </html>
