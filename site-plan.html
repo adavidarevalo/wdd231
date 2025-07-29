@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Site Plan for Chamber of Commerce Website"
+    />
+    <meta name="author" content="David Arevalo" />
+    <title>Chamber of Commerce - Site Plan</title>
+    <style>
+      /* Typography - Roboto font as specified in the site plan */
+      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+
+      /* Color Schema Variables */
+      :root {
+        --primary-color: #2c3e50; /* Dark blue-gray for headers and primary elements */
+        --secondary-color: #3498db; /* Blue for links and accents */
+        --accent-color: #e74c3c; /* Red for CTAs and highlights */
+        --light-color: #ecf0f1; /* Light gray for backgrounds */
+        --dark-color: #2c3e50; /* Dark color for text */
+        --text-color: #333; /* Main text color */
+        --text-light: #7f8c8d; /* Light text color */
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Roboto", sans-serif;
+        line-height: 1.6;
+        color: var(--text-color);
+        background-color: var(--light-color);
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+      }
+
+      header {
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        border-radius: 8px;
+        margin-bottom: 2rem;
+      }
+
+      h1 {
+        font-size: 2.5rem;
+        margin-bottom: 0.5rem;
+        color: white;
+      }
+
+      h2 {
+        font-size: 1.8rem;
+        margin: 2rem 0 1rem 0;
+        color: var(--primary-color);
+        border-bottom: 3px solid var(--secondary-color);
+        padding-bottom: 0.5rem;
+      }
+
+      h3 {
+        font-size: 1.3rem;
+        margin: 1.5rem 0 0.5rem 0;
+        color: var(--primary-color);
+      }
+
+      p,
+      li {
+        margin-bottom: 1rem;
+        font-size: 1rem;
+      }
+
+      .site-plan-section {
+        background: white;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+
+      .color-schema {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin: 1rem 0;
+      }
+
+      .color-box {
+        padding: 1rem;
+        border-radius: 8px;
+        text-align: center;
+        color: white;
+        font-weight: 500;
+      }
+
+      .color-box.primary {
+        background-color: var(--primary-color);
+      }
+      .color-box.secondary {
+        background-color: var(--secondary-color);
+      }
+      .color-box.accent {
+        background-color: var(--accent-color);
+      }
+      .color-box.light {
+        background-color: var(--light-color);
+        color: var(--text-color);
+      }
+      .color-box.dark {
+        background-color: var(--dark-color);
+      }
+
+      .wireframe-section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        margin: 2rem 0;
+      }
+
+      .wireframe {
+        background: white;
+        border: 2px solid var(--secondary-color);
+        border-radius: 8px;
+        padding: 1rem;
+        text-align: center;
+      }
+
+      .wireframe h4 {
+        color: var(--primary-color);
+        margin-bottom: 1rem;
+      }
+
+      .wireframe-content {
+        background: var(--light-color);
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        padding: 1rem;
+        min-height: 300px;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .wireframe-header {
+        background: var(--primary-color);
+        color: white;
+        padding: 0.5rem;
+        border-radius: 4px;
+      }
+
+      .wireframe-hero {
+        background: var(--secondary-color);
+        color: white;
+        padding: 2rem 1rem;
+        border-radius: 4px;
+      }
+
+      .wireframe-section-box {
+        background: white;
+        border: 1px solid #ddd;
+        padding: 1rem;
+        border-radius: 4px;
+      }
+
+      .wireframe-footer {
+        background: var(--dark-color);
+        color: white;
+        padding: 0.5rem;
+        border-radius: 4px;
+      }
+
+      .scenario-list {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      .scenario-list li {
+        background: var(--light-color);
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border-left: 4px solid var(--secondary-color);
+        border-radius: 4px;
+      }
+
+      .typography-example {
+        background: var(--light-color);
+        padding: 1rem;
+        border-radius: 4px;
+        margin: 1rem 0;
+      }
+
+      .font-example {
+        margin: 0.5rem 0;
+      }
+
+      .font-example.light {
+        font-weight: 300;
+      }
+      .font-example.regular {
+        font-weight: 400;
+      }
+      .font-example.medium {
+        font-weight: 500;
+      }
+      .font-example.bold {
+        font-weight: 700;
+      }
+
+      @media (max-width: 768px) {
+        .wireframe-section {
+          grid-template-columns: 1fr;
+        }
+
+        .color-schema {
+          grid-template-columns: 1fr;
+        }
+
+        body {
+          padding: 10px;
+        }
+
+        .site-plan-section {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Chamber of Commerce</h1>
+      <p>Site Plan Document</p>
+    </header>
+
+    <div class="site-plan-section">
+      <h2>1. Site Name</h2>
+      <h3>Chamber of Commerce</h3>
+      <p>
+        <strong>Reason for the name:</strong> The name "Chamber of Commerce" was
+        chosen because it clearly identifies the organization's purpose and
+        mission. It immediately communicates to visitors that this is a
+        business-focused organization that serves the local business community.
+        The name is professional, recognizable, and aligns with international
+        standards for chamber of commerce organizations.
+      </p>
+    </div>
+
+    <div class="site-plan-section">
+      <h2>2. Site Purpose</h2>
+      <p>
+        The Chamber of Commerce website serves multiple purposes for the local
+        business community:
+      </p>
+      <ul>
+        <li>
+          <strong>Business Networking:</strong> Provide a platform for local
+          businesses to connect, collaborate, and grow together through events,
+          directories, and member spotlights.
+        </li>
+        <li>
+          <strong>Information Hub:</strong> Serve as a central resource for
+          business information, local events, weather updates, and community
+          news relevant to business operations.
+        </li>
+        <li>
+          <strong>Membership Management:</strong> Facilitate the process of
+          joining the chamber, managing membership levels, and accessing member
+          benefits.
+        </li>
+        <li>
+          <strong>Community Engagement:</strong> Promote local business events,
+          community initiatives, and foster relationships between businesses and
+          the local community.
+        </li>
+        <li>
+          <strong>Business Directory:</strong> Provide a comprehensive directory
+          of local businesses to help consumers find services and businesses
+          find potential partners.
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-plan-section">
+      <h2>3. Scenarios</h2>
+      <p>
+        The following scenarios reflect the target audience users and their
+        needs:
+      </p>
+      <ol class="scenario-list">
+        <li>
+          <strong>Scenario 1: New Business Owner Looking to Join</strong><br />
+          <em>Question:</em> "I just opened a new restaurant in the area and
+          want to connect with other local businesses. How can I join the
+          chamber and what benefits will I receive? I'm also interested in
+          attending networking events to promote my business."
+        </li>
+        <li>
+          <strong>Scenario 2: Local Resident Seeking Business Services</strong
+          ><br />
+          <em>Question:</em> "I need to find a reliable plumber for my home. Can
+          I search the chamber directory to find reputable local businesses? I
+          also want to know about upcoming community events where I can support
+          local businesses."
+        </li>
+        <li>
+          <strong>Scenario 3: Established Business Owner Seeking Growth</strong
+          ><br />
+          <em>Question:</em> "My company has been a chamber member for 2 years.
+          I want to upgrade my membership level to get more exposure. What are
+          the different membership tiers and how can I showcase my business in
+          the member spotlights section?"
+        </li>
+        <li>
+          <strong>Scenario 4: Event Organizer Looking for Venues</strong><br />
+          <em>Question:</em> "I'm planning a business conference and need to
+          find local venues and catering services. Can I use the chamber
+          directory to find these services, and are there any upcoming
+          networking events where I can meet potential vendors?"
+        </li>
+      </ol>
+    </div>
+
+    <div class="site-plan-section">
+      <h2>4. Color Schema</h2>
+      <p>
+        The following colors have been selected to create a professional,
+        trustworthy, and modern appearance:
+      </p>
+
+      <div class="color-schema">
+        <div class="color-box primary">
+          <h4>Primary Color</h4>
+          <p>#2c3e50 (Dark Blue-Gray)</p>
+          <p>
+            <strong>Usage:</strong> Headers, navigation, footer background,
+            primary text elements
+          </p>
+        </div>
+        <div class="color-box secondary">
+          <h4>Secondary Color</h4>
+          <p>#3498db (Blue)</p>
+          <p>
+            <strong>Usage:</strong> Links, buttons, accents, hover states,
+            call-to-action elements
+          </p>
+        </div>
+        <div class="color-box accent">
+          <h4>Accent Color</h4>
+          <p>#e74c3c (Red)</p>
+          <p>
+            <strong>Usage:</strong> Important alerts, special highlights,
+            membership level indicators
+          </p>
+        </div>
+        <div class="color-box light">
+          <h4>Light Color</h4>
+          <p>#ecf0f1 (Light Gray)</p>
+          <p>
+            <strong>Usage:</strong> Background sections, card backgrounds,
+            subtle highlights
+          </p>
+        </div>
+        <div class="color-box dark">
+          <h4>Dark Color</h4>
+          <p>#2c3e50 (Dark)</p>
+          <p><strong>Usage:</strong> Footer text, secondary text, borders</p>
+        </div>
+      </div>
+
+      <h3>Color Rationale:</h3>
+      <ul>
+        <li>
+          <strong>Primary (Dark Blue-Gray):</strong> Conveys professionalism,
+          trust, and stability - essential for a business organization.
+        </li>
+        <li>
+          <strong>Secondary (Blue):</strong> Represents communication,
+          reliability, and technology - perfect for interactive elements.
+        </li>
+        <li>
+          <strong>Accent (Red):</strong> Creates urgency and draws attention to
+          important information and calls-to-action.
+        </li>
+        <li>
+          <strong>Light Gray:</strong> Provides clean, neutral backgrounds that
+          don't compete with content.
+        </li>
+        <li>
+          <strong>Dark:</strong> Ensures excellent readability and maintains
+          professional appearance.
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-plan-section">
+      <h2>5. Color Schema Use in Document</h2>
+      <p>This site plan document demonstrates the color schema in action:</p>
+      <ul>
+        <li>
+          <strong>Primary Color (#2c3e50):</strong> Used for the header
+          background, main headings (h2), and section titles
+        </li>
+        <li>
+          <strong>Secondary Color (#3498db):</strong> Used for heading
+          underlines, wireframe borders, and scenario list borders
+        </li>
+        <li>
+          <strong>Accent Color (#e74c3c):</strong> Used for important highlights
+          and special elements
+        </li>
+        <li>
+          <strong>Light Color (#ecf0f1):</strong> Used for the main background
+          and wireframe content areas
+        </li>
+        <li>
+          <strong>Dark Color (#2c3e50):</strong> Used for footer elements and
+          wireframe headers
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-plan-section">
+      <h2>6. Typography Named and Used</h2>
+      <h3>Selected Font: Roboto</h3>
+      <p>
+        <strong>Reason for selection:</strong> Roboto is a modern, clean, and
+        highly readable font designed by Google. It's professional yet
+        approachable, making it perfect for a business website. It has excellent
+        legibility across different screen sizes and supports multiple weights
+        for visual hierarchy.
+      </p>
+
+      <div class="typography-example">
+        <h4>Typography Examples:</h4>
+        <div class="font-example light">
+          Light (300): "Welcome to our Chamber of Commerce"
+        </div>
+        <div class="font-example regular">
+          Regular (400): "Connect with local businesses and grow your network"
+        </div>
+        <div class="font-example medium">
+          Medium (500): "Join our community of successful entrepreneurs"
+        </div>
+        <div class="font-example bold">
+          Bold (700): "Chamber of Commerce - Building Stronger Business
+          Communities"
+        </div>
+      </div>
+
+      <h3>Typography Application:</h3>
+      <ul>
+        <li>
+          <strong>Headers (h1, h2, h3):</strong> Bold (700) weight for strong
+          visual hierarchy
+        </li>
+        <li>
+          <strong>Body Text:</strong> Regular (400) weight for optimal
+          readability
+        </li>
+        <li>
+          <strong>Navigation:</strong> Medium (500) weight for clear navigation
+          elements
+        </li>
+        <li>
+          <strong>Subtle Text:</strong> Light (300) weight for secondary
+          information
+        </li>
+      </ul>
+    </div>
+
+    <div class="site-plan-section">
+      <h2>7. Wireframe</h2>
+      <p>
+        Below are wireframes for the home page showing both mobile and desktop
+        layouts:
+      </p>
+
+      <div class="wireframe-section">
+        <div class="wireframe">
+          <h4>Mobile Layout (320px - 768px)</h4>
+          <div class="wireframe-content">
+            <div class="wireframe-header">
+              <strong>Header</strong><br />
+              Chamber of Commerce<br />
+              ☰ Menu
+            </div>
+            <div class="wireframe-hero">
+              <strong>Hero Section</strong><br />
+              Building a stronger business community<br />
+              [Join the Chamber Button]
+            </div>
+            <div class="wireframe-section-box">
+              <strong>Events Section</strong><br />
+              • Networking Breakfast<br />
+              • Community Cleanup<br />
+              • Job Fair
+            </div>
+            <div class="wireframe-section-box">
+              <strong>Weather Section</strong><br />
+              Current Weather<br />
+              Forecast
+            </div>
+            <div class="wireframe-section-box">
+              <strong>Member Spotlights</strong><br />
+              [Member Cards - Stacked]
+            </div>
+            <div class="wireframe-footer">
+              <strong>Footer</strong><br />
+              Contact Info & Copyright
+            </div>
+          </div>
+        </div>
+
+        <div class="wireframe">
+          <h4>Desktop Layout (769px+)</h4>
+          <div class="wireframe-content">
+            <div class="wireframe-header">
+              <strong>Header</strong><br />
+              Chamber of Commerce | Home | Discover | Directory | Join
+            </div>
+            <div class="wireframe-hero">
+              <strong>Hero Section</strong><br />
+              Building a stronger business community<br />
+              [Join the Chamber Button]
+            </div>
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
+            >
+              <div class="wireframe-section-box">
+                <strong>Events Section</strong><br />
+                • Networking Breakfast<br />
+                • Community Cleanup<br />
+                • Job Fair
+              </div>
+              <div class="wireframe-section-box">
+                <strong>Weather Section</strong><br />
+                Current Weather<br />
+                Forecast
+              </div>
+            </div>
+            <div class="wireframe-section-box">
+              <strong>Member Spotlights</strong><br />
+              [Member Cards - 3 Columns]
+            </div>
+            <div class="wireframe-footer">
+              <strong>Footer</strong><br />
+              Contact Info & Copyright
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h3>Wireframe Features:</h3>
+      <ul>
+        <li>
+          <strong>Responsive Design:</strong> Mobile-first approach with
+          breakpoints at 768px
+        </li>
+        <li>
+          <strong>Navigation:</strong> Hamburger menu on mobile, horizontal menu
+          on desktop
+        </li>
+        <li>
+          <strong>Content Layout:</strong> Single column on mobile, multi-column
+          on desktop
+        </li>
+        <li>
+          <strong>Hero Section:</strong> Prominent call-to-action for membership
+        </li>
+        <li>
+          <strong>Information Sections:</strong> Events, weather, and member
+          spotlights
+        </li>
+        <li><strong>Footer:</strong> Contact information and site details</li>
+      </ul>
+    </div>
+
+    <div class="site-plan-section">
+      <h2>8. Valid HTML and CSS</h2>
+      <p>This site plan document has been created using:</p>
+      <ul>
+        <li>
+          <strong>Valid HTML5:</strong> Proper semantic structure with
+          appropriate tags and attributes
+        </li>
+        <li>
+          <strong>Valid CSS3:</strong> Modern CSS with custom properties, Grid,
+          and Flexbox
+        </li>
+        <li>
+          <strong>Proper Title:</strong> "Chamber of Commerce - Site Plan"
+        </li>
+        <li>
+          <strong>Accessibility:</strong> Proper heading hierarchy, alt text,
+          and semantic markup
+        </li>
+        <li>
+          <strong>Responsive Design:</strong> Mobile-first approach with media
+          queries
+        </li>
+        <li>
+          <strong>Web Standards:</strong> Follows W3C guidelines and best
+          practices
+        </li>
+      </ul>
+
+      <h3>Document Structure:</h3>
+      <ul>
+        <li>Proper DOCTYPE declaration</li>
+        <li>Valid meta tags for SEO and viewport</li>
+        <li>Semantic HTML elements (header, main, section, footer)</li>
+        <li>CSS custom properties for consistent theming</li>
+        <li>Responsive grid layouts</li>
+        <li>Accessible color contrast ratios</li>
+      </ul>
+    </div>
+
+    <footer
+      style="
+        background-color: var(--primary-color);
+        color: white;
+        padding: 2rem;
+        text-align: center;
+        border-radius: 8px;
+        margin-top: 2rem;
+      "
+    >
+      <p><strong>Chamber of Commerce Site Plan</strong></p>
+      <p>Created by David Arevalo | WDD 231 Project</p>
+      <p>Last Updated: <span id="current-date"></span></p>
+    </footer>
+
+    <script>
+      // Add current date
+      document.getElementById("current-date").textContent =
+        new Date().toLocaleDateString();
+    </script>
+  </body>
+</html>
