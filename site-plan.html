@@ -5,23 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Site Plan for Chamber of Commerce Website"
+      content="Site Plan for Photography Studio Website"
     />
     <meta name="author" content="David Arevalo" />
-    <title>Chamber of Commerce - Site Plan</title>
+    <title>Capture Moments Studio - Site Plan</title>
     <style>
-      /* Typography - Roboto font as specified in the site plan */
-      @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap");
+      /* Typography - Playfair Display for elegant headings, Open Sans for body text */
+      @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap");
 
       /* Color Schema Variables */
       :root {
-        --primary-color: #2c3e50; /* Dark blue-gray for headers and primary elements */
-        --secondary-color: #3498db; /* Blue for links and accents */
-        --accent-color: #e74c3c; /* Red for CTAs and highlights */
-        --light-color: #ecf0f1; /* Light gray for backgrounds */
-        --dark-color: #2c3e50; /* Dark color for text */
-        --text-color: #333; /* Main text color */
-        --text-light: #7f8c8d; /* Light text color */
+        --primary-color: #1a1a1a; /* Deep black for elegant, professional look */
+        --secondary-color: #f8f8f8; /* Off-white for clean backgrounds */
+        --accent-color: #d4af37; /* Gold for luxury accents and highlights */
+        --text-dark: #2c2c2c; /* Dark gray for main text */
+        --text-light: #666666; /* Light gray for secondary text */
+        --accent-light: #f4e4a6; /* Light gold for subtle highlights */
+        --white: #ffffff; /* Pure white */
       }
 
       * {
@@ -31,40 +31,63 @@
       }
 
       body {
-        font-family: "Roboto", sans-serif;
+        font-family: "Open Sans", sans-serif;
         line-height: 1.6;
-        color: var(--text-color);
-        background-color: var(--light-color);
+        color: var(--text-dark);
+        background-color: var(--secondary-color);
         max-width: 1200px;
         margin: 0 auto;
         padding: 20px;
       }
 
       header {
-        background-color: var(--primary-color);
-        color: white;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #2c2c2c 100%
+        );
+        color: var(--white);
         padding: 2rem;
         text-align: center;
         border-radius: 8px;
         margin-bottom: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      header::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="%23d4af37" opacity="0.3"/><circle cx="80" cy="40" r="1.5" fill="%23d4af37" opacity="0.2"/><circle cx="40" cy="80" r="1" fill="%23d4af37" opacity="0.4"/></svg>');
+        pointer-events: none;
       }
 
       h1 {
-        font-size: 2.5rem;
+        font-family: "Playfair Display", serif;
+        font-size: 3rem;
+        font-weight: 900;
         margin-bottom: 0.5rem;
-        color: white;
+        color: var(--white);
+        position: relative;
+        z-index: 1;
       }
 
       h2 {
-        font-size: 1.8rem;
+        font-family: "Playfair Display", serif;
+        font-size: 2rem;
         margin: 2rem 0 1rem 0;
         color: var(--primary-color);
-        border-bottom: 3px solid var(--secondary-color);
+        border-bottom: 3px solid var(--accent-color);
         padding-bottom: 0.5rem;
       }
 
       h3 {
-        font-size: 1.3rem;
+        font-family: "Playfair Display", serif;
+        font-size: 1.4rem;
         margin: 1.5rem 0 0.5rem 0;
         color: var(--primary-color);
       }
@@ -76,11 +99,12 @@
       }
 
       .site-plan-section {
-        background: white;
+        background: var(--white);
         padding: 2rem;
         margin-bottom: 2rem;
         border-radius: 8px;
-        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        border-left: 4px solid var(--accent-color);
       }
 
       .color-schema {
@@ -91,28 +115,37 @@
       }
 
       .color-box {
-        padding: 1rem;
+        padding: 1.5rem;
         border-radius: 8px;
         text-align: center;
-        color: white;
-        font-weight: 500;
+        font-weight: 600;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
       }
 
       .color-box.primary {
         background-color: var(--primary-color);
+        color: var(--white);
       }
       .color-box.secondary {
         background-color: var(--secondary-color);
+        color: var(--text-dark);
+        border: 2px solid #e0e0e0;
       }
       .color-box.accent {
         background-color: var(--accent-color);
+        color: var(--primary-color);
       }
-      .color-box.light {
-        background-color: var(--light-color);
-        color: var(--text-color);
+      .color-box.text-dark {
+        background-color: var(--text-dark);
+        color: var(--white);
       }
-      .color-box.dark {
-        background-color: var(--dark-color);
+      .color-box.text-light {
+        background-color: var(--text-light);
+        color: var(--white);
+      }
+      .color-box.accent-light {
+        background-color: var(--accent-light);
+        color: var(--primary-color);
       }
 
       .wireframe-section {
@@ -123,24 +156,26 @@
       }
 
       .wireframe {
-        background: white;
-        border: 2px solid var(--secondary-color);
+        background: var(--white);
+        border: 2px solid var(--accent-color);
         border-radius: 8px;
         padding: 1rem;
         text-align: center;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
       }
 
       .wireframe h4 {
         color: var(--primary-color);
         margin-bottom: 1rem;
+        font-family: "Playfair Display", serif;
       }
 
       .wireframe-content {
-        background: var(--light-color);
-        border: 1px solid #ccc;
+        background: var(--secondary-color);
+        border: 1px solid #e0e0e0;
         border-radius: 4px;
         padding: 1rem;
-        min-height: 300px;
+        min-height: 350px;
         display: flex;
         flex-direction: column;
         gap: 0.5rem;
@@ -148,28 +183,33 @@
 
       .wireframe-header {
         background: var(--primary-color);
-        color: white;
+        color: var(--white);
         padding: 0.5rem;
         border-radius: 4px;
       }
 
       .wireframe-hero {
-        background: var(--secondary-color);
-        color: white;
+        background: linear-gradient(
+          135deg,
+          var(--accent-color) 0%,
+          var(--accent-light) 100%
+        );
+        color: var(--primary-color);
         padding: 2rem 1rem;
         border-radius: 4px;
+        font-weight: 600;
       }
 
       .wireframe-section-box {
-        background: white;
-        border: 1px solid #ddd;
+        background: var(--white);
+        border: 1px solid #e0e0e0;
         padding: 1rem;
         border-radius: 4px;
       }
 
       .wireframe-footer {
-        background: var(--dark-color);
-        color: white;
+        background: var(--primary-color);
+        color: var(--white);
         padding: 0.5rem;
         border-radius: 4px;
       }
@@ -180,35 +220,52 @@
       }
 
       .scenario-list li {
-        background: var(--light-color);
-        padding: 1rem;
+        background: var(--secondary-color);
+        padding: 1.5rem;
         margin-bottom: 1rem;
-        border-left: 4px solid var(--secondary-color);
+        border-left: 4px solid var(--accent-color);
         border-radius: 4px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
       }
 
       .typography-example {
-        background: var(--light-color);
-        padding: 1rem;
+        background: var(--secondary-color);
+        padding: 1.5rem;
         border-radius: 4px;
         margin: 1rem 0;
+        border: 1px solid #e0e0e0;
       }
 
       .font-example {
         margin: 0.5rem 0;
       }
 
+      .font-example.playfair {
+        font-family: "Playfair Display", serif;
+      }
+      .font-example.opensans {
+        font-family: "Open Sans", sans-serif;
+      }
       .font-example.light {
         font-weight: 300;
       }
       .font-example.regular {
         font-weight: 400;
       }
-      .font-example.medium {
-        font-weight: 500;
+      .font-example.semibold {
+        font-weight: 600;
       }
       .font-example.bold {
         font-weight: 700;
+      }
+      .font-example.black {
+        font-weight: 900;
+      }
+
+      .camera-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        color: var(--accent-color);
       }
 
       @media (max-width: 768px) {
@@ -227,59 +284,72 @@
         .site-plan-section {
           padding: 1rem;
         }
+
+        h1 {
+          font-size: 2rem;
+        }
       }
     </style>
   </head>
   <body>
     <header>
-      <h1>Chamber of Commerce</h1>
+      <div class="camera-icon">📸</div>
+      <h1>Capture Moments Studio</h1>
       <p>Site Plan Document</p>
     </header>
 
     <div class="site-plan-section">
       <h2>1. Site Name</h2>
-      <h3>Chamber of Commerce</h3>
+      <h3>Capture Moments Studio</h3>
       <p>
-        <strong>Reason for the name:</strong> The name "Chamber of Commerce" was
-        chosen because it clearly identifies the organization's purpose and
-        mission. It immediately communicates to visitors that this is a
-        business-focused organization that serves the local business community.
-        The name is professional, recognizable, and aligns with international
-        standards for chamber of commerce organizations.
+        <strong>Reason for the name:</strong> "Capture Moments Studio" was
+        chosen because it perfectly encapsulates the essence of photography -
+        preserving precious moments in time. The name is memorable,
+        professional, and immediately communicates the studio's purpose.
+        "Capture" suggests both the technical skill and the emotional connection
+        of photography, while "Moments" emphasizes the timeless nature of the
+        memories being preserved. The word "Studio" conveys professionalism and
+        a dedicated space for creative work.
       </p>
     </div>
 
     <div class="site-plan-section">
       <h2>2. Site Purpose</h2>
       <p>
-        The Chamber of Commerce website serves multiple purposes for the local
-        business community:
+        The Capture Moments Studio website serves multiple purposes for both the
+        business and its clients:
       </p>
       <ul>
         <li>
-          <strong>Business Networking:</strong> Provide a platform for local
-          businesses to connect, collaborate, and grow together through events,
-          directories, and member spotlights.
+          <strong>Portfolio Showcase:</strong> Display the photographer's best
+          work across different categories (weddings, portraits, events,
+          commercial) to attract potential clients and demonstrate artistic
+          style and technical expertise.
         </li>
         <li>
-          <strong>Information Hub:</strong> Serve as a central resource for
-          business information, local events, weather updates, and community
-          news relevant to business operations.
+          <strong>Service Information:</strong> Provide detailed information
+          about photography services, packages, pricing, and what clients can
+          expect from their photo sessions.
         </li>
         <li>
-          <strong>Membership Management:</strong> Facilitate the process of
-          joining the chamber, managing membership levels, and accessing member
-          benefits.
+          <strong>Booking & Scheduling:</strong> Allow clients to easily book
+          appointments, view availability, and manage their photography sessions
+          online.
         </li>
         <li>
-          <strong>Community Engagement:</strong> Promote local business events,
-          community initiatives, and foster relationships between businesses and
-          the local community.
+          <strong>Client Gallery Access:</strong> Provide secure,
+          password-protected galleries where clients can view, download, and
+          share their photos after sessions.
         </li>
         <li>
-          <strong>Business Directory:</strong> Provide a comprehensive directory
-          of local businesses to help consumers find services and businesses
-          find potential partners.
+          <strong>About & Credentials:</strong> Share the photographer's story,
+          experience, equipment, and professional background to build trust and
+          credibility.
+        </li>
+        <li>
+          <strong>Contact & Location:</strong> Provide multiple ways for clients
+          to get in touch and find the studio location for in-person
+          consultations.
         </li>
       </ul>
     </div>
@@ -292,34 +362,48 @@
       </p>
       <ol class="scenario-list">
         <li>
-          <strong>Scenario 1: New Business Owner Looking to Join</strong><br />
-          <em>Question:</em> "I just opened a new restaurant in the area and
-          want to connect with other local businesses. How can I join the
-          chamber and what benefits will I receive? I'm also interested in
-          attending networking events to promote my business."
-        </li>
-        <li>
-          <strong>Scenario 2: Local Resident Seeking Business Services</strong
+          <strong
+            >Scenario 1: Engaged Couple Planning Wedding Photography</strong
           ><br />
-          <em>Question:</em> "I need to find a reliable plumber for my home. Can
-          I search the chamber directory to find reputable local businesses? I
-          also want to know about upcoming community events where I can support
-          local businesses."
+          <em>Question:</em> "We're getting married in 6 months and need to find
+          a wedding photographer. We want to see examples of their work,
+          understand their style, and know what packages they offer. Can we see
+          their portfolio and get pricing information? We also want to know if
+          they're available on our wedding date."
         </li>
         <li>
-          <strong>Scenario 3: Established Business Owner Seeking Growth</strong
+          <strong>Scenario 2: Family Looking for Professional Portraits</strong
           ><br />
-          <em>Question:</em> "My company has been a chamber member for 2 years.
-          I want to upgrade my membership level to get more exposure. What are
-          the different membership tiers and how can I showcase my business in
-          the member spotlights section?"
+          <em>Question:</em> "Our family of 5 needs updated professional
+          portraits for our holiday cards and family album. We want to see
+          examples of family photography, understand the session process, and
+          book an appointment. What should we wear and how long will the session
+          take?"
         </li>
         <li>
-          <strong>Scenario 4: Event Organizer Looking for Venues</strong><br />
-          <em>Question:</em> "I'm planning a business conference and need to
-          find local venues and catering services. Can I use the chamber
-          directory to find these services, and are there any upcoming
-          networking events where I can meet potential vendors?"
+          <strong
+            >Scenario 3: Business Owner Needing Corporate Photography</strong
+          ><br />
+          <em>Question:</em> "I need professional headshots for my team and some
+          corporate event photography for our company website. Can I see
+          examples of their commercial work and get a quote for multiple
+          employees? I also need to know if they can come to our office
+          location."
+        </li>
+        <li>
+          <strong>Scenario 4: Previous Client Accessing Photos</strong><br />
+          <em>Question:</em> "I had my wedding photos taken 2 weeks ago and want
+          to see the proofs. How do I access my online gallery and when will my
+          final edited photos be ready? I also want to order some prints and
+          albums."
+        </li>
+        <li>
+          <strong>Scenario 5: Event Organizer Seeking Event Photography</strong
+          ><br />
+          <em>Question:</em> "I'm organizing a corporate conference and need
+          professional event photography. Can I see examples of their event
+          coverage and get pricing for a full-day event? I need both candid
+          shots and formal group photos."
         </li>
       </ol>
     </div>
@@ -327,14 +411,14 @@
     <div class="site-plan-section">
       <h2>4. Color Schema</h2>
       <p>
-        The following colors have been selected to create a professional,
-        trustworthy, and modern appearance:
+        The following colors have been selected to create an elegant,
+        professional, and timeless appearance suitable for a photography studio:
       </p>
 
       <div class="color-schema">
         <div class="color-box primary">
           <h4>Primary Color</h4>
-          <p>#2c3e50 (Dark Blue-Gray)</p>
+          <p>#1a1a1a (Deep Black)</p>
           <p>
             <strong>Usage:</strong> Headers, navigation, footer background,
             primary text elements
@@ -342,56 +426,67 @@
         </div>
         <div class="color-box secondary">
           <h4>Secondary Color</h4>
-          <p>#3498db (Blue)</p>
-          <p>
-            <strong>Usage:</strong> Links, buttons, accents, hover states,
-            call-to-action elements
-          </p>
-        </div>
-        <div class="color-box accent">
-          <h4>Accent Color</h4>
-          <p>#e74c3c (Red)</p>
-          <p>
-            <strong>Usage:</strong> Important alerts, special highlights,
-            membership level indicators
-          </p>
-        </div>
-        <div class="color-box light">
-          <h4>Light Color</h4>
-          <p>#ecf0f1 (Light Gray)</p>
+          <p>#f8f8f8 (Off-White)</p>
           <p>
             <strong>Usage:</strong> Background sections, card backgrounds,
             subtle highlights
           </p>
         </div>
-        <div class="color-box dark">
-          <h4>Dark Color</h4>
-          <p>#2c3e50 (Dark)</p>
-          <p><strong>Usage:</strong> Footer text, secondary text, borders</p>
+        <div class="color-box accent">
+          <h4>Accent Color</h4>
+          <p>#d4af37 (Gold)</p>
+          <p>
+            <strong>Usage:</strong> Call-to-action buttons, important
+            highlights, luxury elements
+          </p>
+        </div>
+        <div class="color-box text-dark">
+          <h4>Text Dark</h4>
+          <p>#2c2c2c (Dark Gray)</p>
+          <p>
+            <strong>Usage:</strong> Main body text, headings, primary content
+          </p>
+        </div>
+        <div class="color-box text-light">
+          <h4>Text Light</h4>
+          <p>#666666 (Light Gray)</p>
+          <p><strong>Usage:</strong> Secondary text, captions, metadata</p>
+        </div>
+        <div class="color-box accent-light">
+          <h4>Accent Light</h4>
+          <p>#f4e4a6 (Light Gold)</p>
+          <p>
+            <strong>Usage:</strong> Subtle highlights, hover states, background
+            accents
+          </p>
         </div>
       </div>
 
       <h3>Color Rationale:</h3>
       <ul>
         <li>
-          <strong>Primary (Dark Blue-Gray):</strong> Conveys professionalism,
-          trust, and stability - essential for a business organization.
+          <strong>Primary (Deep Black):</strong> Represents sophistication,
+          elegance, and the timeless nature of photography. Black is also the
+          traditional color of professional photography equipment.
         </li>
         <li>
-          <strong>Secondary (Blue):</strong> Represents communication,
-          reliability, and technology - perfect for interactive elements.
+          <strong>Secondary (Off-White):</strong> Provides a clean, neutral
+          background that doesn't compete with the photography content and
+          creates a gallery-like atmosphere.
         </li>
         <li>
-          <strong>Accent (Red):</strong> Creates urgency and draws attention to
-          important information and calls-to-action.
+          <strong>Accent (Gold):</strong> Adds luxury and premium feel,
+          suggesting high-quality, professional photography services. Gold is
+          associated with awards and excellence.
         </li>
         <li>
-          <strong>Light Gray:</strong> Provides clean, neutral backgrounds that
-          don't compete with content.
+          <strong>Text Colors:</strong> Dark gray for excellent readability
+          while being softer than pure black, and light gray for secondary
+          information.
         </li>
         <li>
-          <strong>Dark:</strong> Ensures excellent readability and maintains
-          professional appearance.
+          <strong>Light Gold:</strong> Provides subtle warmth and luxury without
+          being overwhelming.
         </li>
       </ul>
     </div>
@@ -401,72 +496,87 @@
       <p>This site plan document demonstrates the color schema in action:</p>
       <ul>
         <li>
-          <strong>Primary Color (#2c3e50):</strong> Used for the header
-          background, main headings (h2), and section titles
+          <strong>Primary Color (#1a1a1a):</strong> Used for the header
+          background, main headings (h2), and wireframe headers
         </li>
         <li>
-          <strong>Secondary Color (#3498db):</strong> Used for heading
-          underlines, wireframe borders, and scenario list borders
+          <strong>Secondary Color (#f8f8f8):</strong> Used for the main
+          background and wireframe content areas
         </li>
         <li>
-          <strong>Accent Color (#e74c3c):</strong> Used for important highlights
-          and special elements
+          <strong>Accent Color (#d4af37):</strong> Used for heading underlines,
+          wireframe borders, scenario list borders, and the header gradient
         </li>
         <li>
-          <strong>Light Color (#ecf0f1):</strong> Used for the main background
-          and wireframe content areas
+          <strong>Text Dark (#2c2c2c):</strong> Used for main text content and
+          headings
         </li>
         <li>
-          <strong>Dark Color (#2c3e50):</strong> Used for footer elements and
-          wireframe headers
+          <strong>Text Light (#666666):</strong> Used for secondary text and
+          descriptions
+        </li>
+        <li>
+          <strong>Accent Light (#f4e4a6):</strong> Used in the header gradient
+          and subtle highlights
         </li>
       </ul>
     </div>
 
     <div class="site-plan-section">
       <h2>6. Typography Named and Used</h2>
-      <h3>Selected Font: Roboto</h3>
+      <h3>Selected Fonts: Playfair Display & Open Sans</h3>
       <p>
-        <strong>Reason for selection:</strong> Roboto is a modern, clean, and
-        highly readable font designed by Google. It's professional yet
-        approachable, making it perfect for a business website. It has excellent
-        legibility across different screen sizes and supports multiple weights
-        for visual hierarchy.
+        <strong>Reason for selection:</strong> Playfair Display is an elegant
+        serif font perfect for headings and display text, conveying
+        sophistication and artistic quality. Open Sans is a clean, highly
+        readable sans-serif font ideal for body text and user interface
+        elements. This combination creates a perfect balance between artistic
+        elegance and professional readability.
       </p>
 
       <div class="typography-example">
         <h4>Typography Examples:</h4>
-        <div class="font-example light">
-          Light (300): "Welcome to our Chamber of Commerce"
+        <div class="font-example playfair black">
+          Playfair Display Black (900): "Capture Moments Studio"
         </div>
-        <div class="font-example regular">
-          Regular (400): "Connect with local businesses and grow your network"
+        <div class="font-example playfair bold">
+          Playfair Display Bold (700): "Wedding Photography"
         </div>
-        <div class="font-example medium">
-          Medium (500): "Join our community of successful entrepreneurs"
+        <div class="font-example playfair regular">
+          Playfair Display Regular (400): "Portrait Sessions"
         </div>
-        <div class="font-example bold">
-          Bold (700): "Chamber of Commerce - Building Stronger Business
-          Communities"
+        <div class="font-example opensans semibold">
+          Open Sans SemiBold (600): "Book Your Session"
+        </div>
+        <div class="font-example opensans regular">
+          Open Sans Regular (400): "Professional photography services for all
+          your special moments"
+        </div>
+        <div class="font-example opensans light">
+          Open Sans Light (300): "View our latest portfolio"
         </div>
       </div>
 
       <h3>Typography Application:</h3>
       <ul>
         <li>
-          <strong>Headers (h1, h2, h3):</strong> Bold (700) weight for strong
-          visual hierarchy
+          <strong>Main Headings (h1, h2):</strong> Playfair Display Black (900)
+          for strong visual impact
         </li>
         <li>
-          <strong>Body Text:</strong> Regular (400) weight for optimal
+          <strong>Section Headings (h3):</strong> Playfair Display Bold (700)
+          for elegant hierarchy
+        </li>
+        <li>
+          <strong>Body Text:</strong> Open Sans Regular (400) for optimal
           readability
         </li>
         <li>
-          <strong>Navigation:</strong> Medium (500) weight for clear navigation
-          elements
+          <strong>Navigation & Buttons:</strong> Open Sans SemiBold (600) for
+          clear interaction elements
         </li>
         <li>
-          <strong>Subtle Text:</strong> Light (300) weight for secondary
+          <strong>Subtle Text:</strong> Open Sans Light (300) for secondary
           information
         </li>
       </ul>
@@ -485,32 +595,32 @@
           <div class="wireframe-content">
             <div class="wireframe-header">
               <strong>Header</strong><br />
-              Chamber of Commerce<br />
+              Capture Moments Studio<br />
               ☰ Menu
             </div>
             <div class="wireframe-hero">
               <strong>Hero Section</strong><br />
-              Building a stronger business community<br />
-              [Join the Chamber Button]
+              Capturing Life's Beautiful Moments<br />
+              [Book Session Button]
             </div>
             <div class="wireframe-section-box">
-              <strong>Events Section</strong><br />
-              • Networking Breakfast<br />
-              • Community Cleanup<br />
-              • Job Fair
+              <strong>Portfolio Preview</strong><br />
+              [Wedding Photos Grid]<br />
+              [Portrait Photos Grid]
             </div>
             <div class="wireframe-section-box">
-              <strong>Weather Section</strong><br />
-              Current Weather<br />
-              Forecast
+              <strong>Services</strong><br />
+              • Wedding Photography<br />
+              • Portrait Sessions<br />
+              • Event Coverage
             </div>
             <div class="wireframe-section-box">
-              <strong>Member Spotlights</strong><br />
-              [Member Cards - Stacked]
+              <strong>About Preview</strong><br />
+              Professional photographer with 10+ years experience
             </div>
             <div class="wireframe-footer">
               <strong>Footer</strong><br />
-              Contact Info & Copyright
+              Contact Info & Social Media
             </div>
           </div>
         </div>
@@ -520,35 +630,38 @@
           <div class="wireframe-content">
             <div class="wireframe-header">
               <strong>Header</strong><br />
-              Chamber of Commerce | Home | Discover | Directory | Join
+              Capture Moments Studio | Home | Portfolio | Services | About |
+              Contact
             </div>
             <div class="wireframe-hero">
               <strong>Hero Section</strong><br />
-              Building a stronger business community<br />
-              [Join the Chamber Button]
+              Capturing Life's Beautiful Moments<br />
+              [Book Session Button]
             </div>
             <div
               style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem"
             >
               <div class="wireframe-section-box">
-                <strong>Events Section</strong><br />
-                • Networking Breakfast<br />
-                • Community Cleanup<br />
-                • Job Fair
+                <strong>Featured Portfolio</strong><br />
+                [Large Wedding Photo]<br />
+                [Portrait Gallery]
               </div>
               <div class="wireframe-section-box">
-                <strong>Weather Section</strong><br />
-                Current Weather<br />
-                Forecast
+                <strong>Services Overview</strong><br />
+                • Wedding Photography<br />
+                • Portrait Sessions<br />
+                • Event Coverage<br />
+                • Commercial Work
               </div>
             </div>
             <div class="wireframe-section-box">
-              <strong>Member Spotlights</strong><br />
-              [Member Cards - 3 Columns]
+              <strong>About Section</strong><br />
+              Professional photographer with 10+ years experience<br />
+              [Photographer Photo]
             </div>
             <div class="wireframe-footer">
               <strong>Footer</strong><br />
-              Contact Info & Copyright
+              Contact Info, Social Media & Copyright
             </div>
           </div>
         </div>
@@ -565,17 +678,23 @@
           on desktop
         </li>
         <li>
-          <strong>Content Layout:</strong> Single column on mobile, multi-column
-          on desktop
+          <strong>Hero Section:</strong> Large, impactful hero with
+          call-to-action for booking
         </li>
         <li>
-          <strong>Hero Section:</strong> Prominent call-to-action for membership
+          <strong>Portfolio Showcase:</strong> Featured images to immediately
+          demonstrate quality
         </li>
         <li>
-          <strong>Information Sections:</strong> Events, weather, and member
-          spotlights
+          <strong>Services Overview:</strong> Clear presentation of photography
+          services
         </li>
-        <li><strong>Footer:</strong> Contact information and site details</li>
+        <li>
+          <strong>About Section:</strong> Builds trust and personal connection
+        </li>
+        <li>
+          <strong>Footer:</strong> Contact information and social media links
+        </li>
       </ul>
     </div>
 
@@ -589,10 +708,10 @@
         </li>
         <li>
           <strong>Valid CSS3:</strong> Modern CSS with custom properties, Grid,
-          and Flexbox
+          Flexbox, and gradients
         </li>
         <li>
-          <strong>Proper Title:</strong> "Chamber of Commerce - Site Plan"
+          <strong>Proper Title:</strong> "Capture Moments Studio - Site Plan"
         </li>
         <li>
           <strong>Accessibility:</strong> Proper heading hierarchy, alt text,
@@ -606,6 +725,10 @@
           <strong>Web Standards:</strong> Follows W3C guidelines and best
           practices
         </li>
+        <li>
+          <strong>Typography:</strong> Google Fonts integration with proper font
+          loading
+        </li>
       </ul>
 
       <h3>Document Structure:</h3>
@@ -616,20 +739,25 @@
         <li>CSS custom properties for consistent theming</li>
         <li>Responsive grid layouts</li>
         <li>Accessible color contrast ratios</li>
+        <li>Elegant typography hierarchy</li>
       </ul>
     </div>
 
     <footer
       style="
-        background-color: var(--primary-color);
-        color: white;
+        background: linear-gradient(
+          135deg,
+          var(--primary-color) 0%,
+          #2c2c2c 100%
+        );
+        color: var(--white);
         padding: 2rem;
         text-align: center;
         border-radius: 8px;
         margin-top: 2rem;
       "
     >
-      <p><strong>Chamber of Commerce Site Plan</strong></p>
+      <p><strong>Capture Moments Studio Site Plan</strong></p>
       <p>Created by David Arevalo | WDD 231 Project</p>
       <p>Last Updated: <span id="current-date"></span></p>
     </footer>
